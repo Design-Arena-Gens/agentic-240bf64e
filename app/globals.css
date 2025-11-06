@@ -1,0 +1,248 @@
+:root {
+  --bg: #07090f;
+  --bg-elevated: #101422;
+  --accent: #48c78e;
+  --accent-muted: rgba(72, 199, 142, 0.16);
+  --text: #f4f6ff;
+  --text-muted: #b8bed2;
+  --border: rgba(255, 255, 255, 0.08);
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(circle at top, #131a2f, var(--bg));
+  color: var(--text);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4rem;
+  padding: 4rem clamp(1.5rem, 4vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem clamp(1rem, 4vw, 4rem);
+  background: linear-gradient(135deg, rgba(72, 199, 142, 0.12), transparent);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  box-shadow: 0 25px 60px -40px rgba(8, 12, 24, 0.9);
+}
+
+.hero .badge {
+  display: inline-block;
+  background: var(--accent-muted);
+  color: var(--accent);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 3.6rem);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 1rem auto 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.toc {
+  padding: 2rem;
+  background: rgba(16, 20, 34, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(12px);
+}
+
+.toc h2 {
+  margin-top: 0;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.toc li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.toc li a:hover {
+  background: rgba(72, 199, 142, 0.12);
+  color: var(--accent);
+  border-color: rgba(72, 199, 142, 0.3);
+}
+
+.sections {
+  display: grid;
+  gap: 3rem;
+}
+
+.section {
+  padding: clamp(2rem, 3vw, 3rem);
+  background: var(--bg-elevated);
+  border-radius: 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 50px -45px rgba(0, 0, 0, 0.8);
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+}
+
+.section .tagline {
+  margin: 1rem 0 1.5rem;
+  color: var(--accent);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-content {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.paragraphs p {
+  margin: 0 0 1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.paragraphs p:last-child {
+  margin-bottom: 0;
+}
+
+.action-card {
+  border: 1px solid rgba(72, 199, 142, 0.2);
+  background: rgba(72, 199, 142, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.action-card h3 {
+  margin: 0 0 1rem;
+  color: var(--accent);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+}
+
+.action-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.closing {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6rem;
+}
+
+.closing-card {
+  max-width: 720px;
+  width: 100%;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(72, 199, 142, 0.18), rgba(0, 0, 0, 0.05));
+  border: 1px solid rgba(72, 199, 142, 0.25);
+  text-align: center;
+}
+
+.closing-card h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.closing-card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.closing-card button {
+  margin-top: 1.5rem;
+  padding: 0.9rem 2rem;
+  background: var(--accent);
+  border: none;
+  border-radius: 999px;
+  color: #041108;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.closing-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -12px rgba(72, 199, 142, 0.7);
+}
+
+@media (min-width: 960px) {
+  .page {
+    grid-template-columns: 280px 1fr;
+    grid-template-areas:
+      "hero hero"
+      "toc sections"
+      "closing closing";
+    align-items: start;
+  }
+
+  .hero {
+    grid-area: hero;
+  }
+
+  .toc {
+    grid-area: toc;
+    position: sticky;
+    top: 2.5rem;
+  }
+
+  .sections {
+    grid-area: sections;
+  }
+
+  .closing {
+    grid-area: closing;
+  }
+}
